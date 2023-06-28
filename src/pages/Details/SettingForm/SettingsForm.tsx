@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { Alert, Button, Checkbox, FormControl, FormControlLabel, FormGroup, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { Alert, Checkbox, FormControl, FormControlLabel, FormGroup, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { loadCityDetails } from '../../../store/actions/weather';
 import { ISelectedUnites } from '../../../types';
 import { useHookDispatch } from '../../../hooks';
+import Button from '../../../components/Button/Button';
 
 const SettingsForm = ({ latitude, longitude }: { latitude: number, longitude: number }) => {
   const dispatch = useHookDispatch()
@@ -134,9 +135,7 @@ const SettingsForm = ({ latitude, longitude }: { latitude: number, longitude: nu
           <MenuItem value="inch">Inch</MenuItem>
         </Select>
       </FormControl>
-      <Button type="submit" variant="contained" color="primary" className="float-right">
-        Update Chart
-      </Button>
+      <Button onClick={handleOnFormSubmit} label="Update Chart" style={{ float: "right"}} />
     </form>
   );
 };
