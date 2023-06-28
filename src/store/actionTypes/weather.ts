@@ -1,0 +1,10 @@
+enum WeatherActionTypes {
+  INIT_CITIES,
+  INIT_CITIES_SUCCESS,
+  INIT_CITIES_FAILED,
+  INIT_CITY_DETAILS,
+  INIT_CITY_DETAILS_SUCCESS,
+  INIT_CITY_DETAILS_FAILED
+}
+
+export default WeatherActionTypes;
